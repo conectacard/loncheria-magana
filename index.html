@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://altpro22.github.io/Magana/" />
+    <meta property="og:title" content="LONCHERÍA MAGAÑA | Magazine Edition" />
+    <meta property="og:description" content="Descubre el auténtico sabor tradicional. Explora nuestro menú exclusivo y visítanos con tu CONECTA CARD." />
+    
+    <meta property="og:image" content="https://altpro22.github.io/Magana/assets/brand/og_magana.jpg" />
+    <meta property="og:image:secure_url" content="https://altpro22.github.io/Magana/assets/brand/og_magana.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1920" />
+
+    <title>LONCHERÍA MAGAÑA | CONECTA CARD</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="btn-audio-control" class="audio-toggle" onclick="toggleAudioGlobal()">
+        <i id="audio-icon" class="fas fa-volume-up"></i>
+    </button>
+
+    <section id="portada-hub" class="main-hub">
+        <header class="magazine-header">
+            <div class="header-title-container">
+                <h1 class="agency-name">LONCHERÍA MAGAÑA</h1>
+                <div class="download-track-container">
+                    <p class="download-text">Descarga nuestro spot de audio</p>
+                    <a href="assets/sounds/spot-intro.mp3" download="spot-intro.mp3" class="btn-download-audio" onclick="playClickSound()">
+                        <i class="fas fa-download"></i> DESCARGAR
+                    </a>
+                </div>
+            </div>
+            <img src="assets/brand/logo-mini.png" alt="Logo" class="agency-logo">
+        </header>
+
+        <div class="mosaic-grid">
+            <div class="mosaic-item hero-block" onclick="openProfileZoom()">
+                <img id="profile-pic-img" src="assets/hero/main-photo.jpg" alt="Lonchería Magaña Sabor Tradicional">
+                <div class="hero-overlay">
+                    <span class="edition-label">CONECTA CARD</span>
+                    <h2 class="hero-title">LONCHERÍA MAGAÑA</h2>
+                </div>
+            </div>
+
+            <div class="mosaic-item menu-block">
+                <div class="magazine-menu-grid">
+                    <button class="mag-btn" onclick="showAppContent('cat1')">
+                        <span class="num">01</span> QUIÉNES SOMOS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat2')">
+                        <span class="num">02</span> SERVICIOS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat3')">
+                        <span class="num">03</span> CLIENTES FELICES
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat4')">
+                        <span class="num">04</span> CONTACTO
+                    </button>
+                </div>
+            </div>
+
+            <div class="mosaic-item video-block" onclick="openYouTubeVideo()">
+                <div class="video-preview" id="yt-iframe-container">
+                    <img src="assets/hero/video-thumb.jpg" alt="Lonchería Magaña Video Preview" id="yt-thumb-img">
+                    <div class="yt-play-mini" id="yt-play-icon"><i class="fab fa-youtube"></i></div>
+                </div>
+                <span class="block-label">CLIC PARA REPRODUCIR</span>
+            </div>
+
+            <div class="mosaic-item lead-block">
+                <button type="button" onclick="abrirMenu()" class="btn-shiny-gold shine-effect" style="width: 100%; border: none; cursor: pointer; text-decoration: none; display: block; text-align: center; padding: 15px; font-weight: bold; border-radius: 5px;">
+                    ¡ORDENA AQUÍ O VISÍTA NUESTRAS SUCURSALES!
+                </button>
+            </div>
+
+            <div id="miMenuContacto" class="menu-oculto" onclick="cerrarMenu()">
+                <div class="menu-contenido" onclick="event.stopPropagation()">
+
+                    <!-- TÍTULO Y MAPA DE UBICACIÓN -->
+                    <div class="bloque-mapa-guia" style="text-align: center; padding: 5px 0 15px 0; width: 100%;">
+                        <h3 style="font-size: 0.95rem; font-weight: bold; color: #fff; text-transform: uppercase; margin-bottom: 4px; font-family: 'Montserrat', sans-serif;">Busca tu sucursal más cercana</h3>
+                        <p style="font-size: 0.7rem; color: rgba(255,255,255,0.7); margin-bottom: 12px; font-family: 'Montserrat', sans-serif; padding: 0 10px;">Ubica tu posición en el mapa de Aguascalientes y elige abajo tu sucursal de preferencia.</p>
+                        
+                        <div class="mapa-wrapper" style="width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #00f0ff; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d59235.91891913165!2d-102.33128453406325!3d21.886407005481742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sloncheria%20magana%20aguascalientes!5e0!3m2!1ses-419!2smx!4v1718520000000!5m2!1ses-419!2smx" 
+                                width="100%" 
+                                height="220" 
+                                style="border:0; display: block;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- 1. SUCURSAL UNIVERSIDAD -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc1')">1. SUCURSAL UNIVERSIDAD</button>
+                    <div id="suc1-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <p class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> Av. Universidad 935-local 47, Bosques del Prado Nte.</p>
+                            <p class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 8:00 PM | <strong>Descansa:</strong> MARTES</p>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag no"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag no"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524492269911" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/LN7b7SWW2MZctDiY7" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <!-- 2. SUCURSAL NACOZARI -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc2')">2. SUCURSAL NACOZARI</button>
+                    <div id="suc2-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <div class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> Av Héroe de Nacozari 501-E, El Llanito</div>
+                            <div class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 8:00 PM | <strong>Descansa:</strong> ABIERTO DIARIO</div>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag si"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag si"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524499193746" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/uVo1iSwFmSb8jDcd6" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <!-- 3. SUCURSAL VILLERIAS -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc3')">3. SUCURSAL VILLERIAS</button>
+                    <div id="suc3-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <div class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> Av. Constitución, Paseo de Villerias 106</div>
+                            <div class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 8:00 PM | <strong>Descansa:</strong> DOMINGO</div>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag si"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag si"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524494382090" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/6t8edYoj6U3iG9Ay5" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <!-- 4. SUCURSAL EL TURI -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc4')">4. SUCURSAL EL TURI</button>
+                    <div id="suc4-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <div class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> Av. de los Maestros 2644, Versalles 2da Secc.</div>
+                            <div class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 8:00 PM | <strong>Descansa:</strong> ABIERTO DIARIO</div>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag si"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag si"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524493217075" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/QCmCBYWMppNVSV686" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <!-- 5. SUCURSAL PLAZA SAN MARCOS -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc5')">5. SUCURSAL PLAZA SAN MARCOS</button>
+                    <div id="suc5-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <div class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> E-2 Plaza San Marcos, Av. Fundición</div>
+                            <div class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 8:00 PM | <strong>Descansa:</strong> ABIERTO DIARIO</div>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag si"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag no"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524497162172" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/EuEFBAeUK9YQzS9P8" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <!-- 6. SUCURSAL H-E-B -->
+                    <button class="sucursal-accordion-btn" onclick="toggleSucursalAcordeon('suc6')">6. SUCURSAL H-E-B</button>
+                    <div id="suc6-panel" class="sucursal-panel-content">
+                        <div class="sucursal-info-block">
+                            <div class="suc-domicilio"><i class="fas fa-map-marker-alt"></i> Av Independencia 1831, Desarrollo Esp. Galerías</div>
+                            <div class="suc-horario"><i class="far fa-clock"></i> 10:00 AM a 11:00 PM | <strong>Descansa:</strong> MIERCOLES</div>
+                            <div class="suc-tags">
+                                <span class="tag si"><i class="fas fa-utensils"></i> Consumo Aquí</span>
+                                <span class="tag si"><i class="fas fa-store"></i> Pide y Recoge</span>
+                                <span class="tag si"><i class="fas fa-motorcycle"></i> Domicilio</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/524492699780" target="_blank" class="btn-menu whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://maps.app.goo.gl/Tm4ZnE1bHgZ6aNGX6" target="_blank" class="btn-menu maps-btn"><i class="fas fa-location-arrow"></i> Cómo Llegar</a>
+                    </div>
+
+                    <button onclick="cerrarMenu()" class="btn-cerrar">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="mosaic-item -block">
+                <button class="btn-magazine-share" onclick="shareExperienceRobust()">
+                    <i class="fas fa-share-alt"></i> RECOMIÉNDANOS Y COMPARTE
+                </button>
+            </div>
+            
+            <div class="mosaic-item custom-actions-block">
+                <button class="btn-custom-action btn-recommended-businesses" onclick="openBrandModal('modal-negocios')">
+                    POR ESTO SOMOS LOS MEJORES
+                </button>
+                
+                <div class="credits-altpro-compact">
+                    <span class="produced-by">PRODUCED BY CONECTA CARD</span>
+                    <a href="https://wa.me/524491472336" target="_blank" class="altpro-link">
+                        <i class="fab fa-whatsapp"></i> 449 147 2336
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-negocios" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-negocios')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-negocios')">×</button>
+        <div class="network-scroll-box" onclick="event.stopPropagation()">
+            <h3 class="network-modal-title"><i class="fas fa-utensils"></i> SABOREA LA TRADICIÓN</h3>
+            <p class="network-modal-subtitle">Descubre por qué somos tu opción favorita</p>
+            <div class="network-buttons-grid">
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/0Y40OrgctWc')"><i class="fas fa-bread-slice"></i> LAS MEJORES TORTAS</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/soJDkNU7aK4')"><i class="fas fa-hotdog"></i> POZOLE, FLAUTAS Y ANTOJOS</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/HSjSnY1SiJY')"><i class="fas fa-percentage"></i> PROMOCIONES ESPECIALES</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/84h80XkH6D8')"><i class="fas fa-heart"></i> TRABAJAMOS PARA TI</button>
+            </div>
+        </div>
+    </div>
+
+    <main id="dynamic-content-layer" class="content-overlay" style="display: none;">
+        <button class="btn-close-circular" onclick="closeAppContent()">×</button>
+        <section class="tab-pane" id="cat1-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat1" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat2-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat2" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat3-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat3" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat4-pane" style="display: none;">
+            <h2 class="pane-title">CONTACTO</h2>
+            <div class="contact-panel-robust">
+                <p class="address-tag"><i class="fas fa-store"></i> ¡Visítanos en cualquiera de nuestras sucursales!</p>
+                <div class="social-vertical-stack">
+                    <a id="link-fb-heb" href="https://www.facebook.com/profile.php?id=100065520878236" target="_blank" class="stack-btn fb-color"><i class="fab fa-facebook"></i> LONCHERÍA MAGAÑA HEB</a>
+                    <a id="link-fb-nacozari" href="https://www.facebook.com/LoncheriaMaganaAgs" target="_blank" class="stack-btn fb-color"><i class="fab fa-facebook"></i> LONCHERÍA MAGAÑA NACOZARI</a>
+                    <a id="link-fb-villerias" href="https://www.facebook.com/LoncheriaMaganaAgs/mentions/" target="_blank" class="stack-btn fb-color"><i class="fab fa-facebook"></i> LONCHERÍA MAGAÑA VILLERIAS</a>
+                </div>
+                <div class="qr-reubicado-container">
+                    <h4 class="qr-section-heading">ESCANEA EL CÓDIGO QR</h4>
+                    <img src="assets/hero/qr.png" alt="QR Local" class="qr-embedded-img">
+                    <a href="assets/hero/qr.png" download="qr.png" class="btn-download-qr-integrated" onclick="playClickSound()">
+                        <i class="fas fa-cloud-download-alt"></i> COMPARTIR QR
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="overlay-modal" style="display: none;" onclick="closeLightbox()">
+        <button class="btn-close-circular" onclick="closeLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <button class="btn-nav-lightbox btn-prev" onclick="changeLightboxImage(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="zoom-image-wrapper">
+                <img id="lightbox-image" src="" alt="Zoom">
+                <img src="assets/brand/logo-mini.png" class="mini-logo-zoom-overlay">
+            </div>
+            <button class="btn-nav-lightbox btn-next" onclick="changeLightboxImage(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div id="text-zoom-modal" class="overlay-modal" style="display: none;" onclick="closeTextZoom()">
+        <div class="text-zoom-card" onclick="event.stopPropagation()">
+            <button class="btn-close-circular" style="top:-20px; right:-20px;" onclick="closeTextZoom()">×</button>
+            <div class="card-branding-header" style="display: flex; align-items: center;">
+                <img src="assets/brand/logo-mini.png" class="card-logo" style="width: 40px; margin-right: 10px;">
+                <h3 id="text-zoom-title"></h3>
+            </div>
+            <hr class="gold-divider" style="border: 0; border-top: 1px solid var(--brand-accent); margin: 15px 0;">
+            <div id="text-zoom-content" style="white-space: pre-line;"></div>
+        </div>
+    </div>
+
+    <audio id="spot-intro" src="assets/sounds/spot-intro.mp3" preload="auto" loop></audio>
+    <audio id="sndFxClick" src="assets/sounds/clic.mp3"></audio>
+    
+    <div id="video-lightbox-overlay" class="overlay-modal" style="display:none;" onclick="closeVideoLightbox()">
+        <button class="btn-close-circular" onclick="closeVideoLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <div class="zoom-image-wrapper" style="width: 90%; max-width: 600px;">
+                <iframe id="video-lightbox-frame" style="width: 100%; aspect-ratio: 16/9; border: 3px solid var(--brand-accent); border-radius: 10px;" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
