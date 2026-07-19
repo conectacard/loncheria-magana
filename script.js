@@ -81,7 +81,7 @@ function renderGallery(cat) {
     titleHeader.innerText = CONFIG.textos[cat].t;
     grid.appendChild(titleHeader);
     
-    const imgCount = (cat === 'cat3') ? 3 : (cat === 'cat1' || cat === 'cat2') ? 6 : 4;
+    const imgCount = (cat === 'cat3') ? 4 : (cat === 'cat1' || cat === 'cat2') ? 6 : 4;
     const imgs = [];
     for(let i = 1; i <= imgCount; i++) { imgs.push(`assets/gallery/${cat}/${i}.jpg`); }
     
@@ -97,8 +97,8 @@ function renderGallery(cat) {
         const videoContainer = document.createElement('div');
         videoContainer.style.cssText = "display: flex; gap: 10px; margin-top: 15px; justify-content: center; width: 100%; flex-wrap: wrap;";
         videoContainer.innerHTML = `
-            <a href="https://www.youtube.com/shorts/-LurbybR1Dg" target="_blank" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.7rem; border: 1px solid var(--brand-accent);">Excelente sabor</a>
-            <a href="https://www.youtube.com/shorts/0JqMiO0o0qg" target="_blank" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.7rem; border: 1px solid var(--brand-accent);">Calidad Tradicional</a>
+            <a href="https://www.youtube.com/shorts/-LurbybR1Dg" target="_blank" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.7rem; border: 1px solid var(--brand-accent);">Video 1</a>
+            <a href="https://www.youtube.com/shorts/0JqMiO0o0qg" target="_blank" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.7rem; border: 1px solid var(--brand-accent);">Video 2</a>
         `;
         grid.appendChild(videoContainer);
     }
